@@ -3,7 +3,7 @@
 
 # alınan BTK akademi Makine öğrenmesi sertifikası
 
-
+![Resim Açıklaması](resimler/grafik.png)
 
 
 # projenin amacı
@@ -213,6 +213,7 @@ sonuc:               precision    recall  f1-score   support
    macro avg       0.81      0.81      0.81    100771
 weighted avg       0.81      0.81      0.81    100771
 ```
+karşılaştırma: Random Forest, karar ağaçlarıyla verideki karmaşıklığı daha iyi anladığından KNN’den daha iyi sonuç verdi. (KNN sadece birbirine yakın verilere bakar, mantıksal ilişkileri RF kadar yakalayamaz)
 
 
 # grafikler
