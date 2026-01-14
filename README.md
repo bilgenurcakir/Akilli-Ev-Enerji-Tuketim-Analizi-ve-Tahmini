@@ -3,7 +3,7 @@
 
 # alınan BTK akademi Makine öğrenmesi sertifikası
 
-![Resim Açıklaması](grafikler-ve-sertifika/grafik.png)
+![Resim Açıklaması](Python_ile_Makine_Öğrenmesi_sertifikası)
 
 
 # projenin amacı
