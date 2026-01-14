@@ -3,7 +3,7 @@
 
 # alınan BTK akademi Makine öğrenmesi sertifikası
 
-![Resim Açıklaması](resimler/grafik.png)
+![Resim Açıklaması](grafikler-ve-sertifika/grafik.png)
 
 
 # projenin amacı
@@ -219,4 +219,5 @@ karşılaştırma: Random Forest, karar ağaçlarıyla verideki karmaşıklığ�
 # grafikler
 
 
-
+![Resim Açıklaması](grafikler-ve-sertififa/grafik.png)
+![Resim Açıklaması](grafikler-ve-sertifika/grafik.png)
