@@ -29,6 +29,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
 ```
 
+
 dataset alındı ve incelendi
 ```python
 df=pd.read_csv("Smart_Home_dataset.csv")
@@ -37,7 +38,9 @@ df.describe()
 df.info()
 ```
 
+
 dataset içerisindeki kategorik kolonlar incelendi ve numerik hale getirildi
+
 
 -- coloudcover kolonu incelendiğinde sayısal olduğu ancak bir adet "cloudCover" değişkeninin bulunduğu görüldü ve Nan olarak değiştirildi.
 daha sonrasında numeric hale çevirildi.
@@ -47,6 +50,7 @@ df.cloudCover=df.cloudCover.replace('cloudCover',np.nan)
 df.cloudCover.unique()
 df.cloudCover=pd.to_numeric(df.cloudCover)
 ```
+
 -- time kolonu incelendiğinde 10 basamakli saniye formatında verildiği görüldü ve datetime ile tarih formatına getirilerek model için önemli olacak( enerji tüketimi aylara, haftanın günlerine ve saate göre değişiklik gösterebilir bu yüzden) month, day_of_week ve hour feature'ları alındı ve time değikeni silindi .
 ```python
 df.time.unique # datetime ile yeniden formatlanmalı
@@ -57,6 +61,7 @@ df['day_of_week'] = df['time'].dt.dayofweek
 df['month'] = df['time'].dt.month
 df.drop( columns=["time"], inplace=True)
 ```
+
 -- summary kolonu incelendiğinde sayısal değer içermediği görüldü ve label encoding yapıldı.(label encoding pivot tablosu gösteriminden sonra yapıldı böylece pivot tablosunda hava durumu yerine sayısal bir değer yazmadı, inceleme kolaylaştırıldı)
 ```python
 df.summary.unique()
@@ -78,7 +83,8 @@ df.isnull().sum()
 df=df.dropna()
 ```
 
-pivot tablolama- zaman ve hava durumu verilerini doğrudan kullanmak yerine use[kW] üzerindeki ağırlığını yanıtan pivot tabloları oluşturuldu, dataframe eklendi
+
+pivot tablolama - zaman ve hava durumu verilerini doğrudan kullanmak yerine use[kW] üzerindeki ağırlığını yanıtan pivot tabloları oluşturuldu, dataframe eklendi
 ```python
 pivot=df.pivot_table(index="hour", values="use [kW]", aggfunc="mean").reset_index() # saat bazlı ortalaa tüketim pivot tablosu
 
@@ -108,11 +114,13 @@ df = df.merge(pivot2, on='summary', how='left')
 df.info()
 ```
 
+
 target, use[kW] feature'ı üzerinden ortalama alınarak ortalama uzerinde kalanlara yüksek(1), altında kalanlara ise normal(0) değerini alan feature oluşturuldu
 ```python
 ortalama=df['use [kW]'].median()
 df["enerji_sev"]=(df["use [kW]"]> ortalama).astype(int) # ortalamadan az ise 0 cok ise 1
 ```
+
 
 modele verilecek girdiler ve target seçildi, train ve test olarak ayrıldı.
 ```python
@@ -135,6 +143,7 @@ y=df["enerji_sev"]
 
 X_train, X_test, y_train, y_test= train_test_split(X,y,test_size=0.2, random_state=42)
 ```
+
 
 RandomForest modeli kullanıldı, modelin hangi özelliklere daha çok dikkat ettiği grafikleştirildi.
 ```python
@@ -159,6 +168,7 @@ plt.ylabel('feature')
 plt.show()
 ```
 
+
 KNN modeli çağrıldı, öncesinde daha iyi bir sonuç için StandardScaler ile X_train ve X_test ölçeklendirildi
 ```python
 scaler=StandardScaler()
@@ -175,7 +185,8 @@ print("sonuc:",classificationtable2)
 
 ```
 
-#model çıktıları
+
+# model çıktıları
 
 1- randomforest
 ```python
@@ -204,7 +215,7 @@ weighted avg       0.81      0.81      0.81    100771
 ```
 
 
-#grafikler
+# grafikler
 
 
 
