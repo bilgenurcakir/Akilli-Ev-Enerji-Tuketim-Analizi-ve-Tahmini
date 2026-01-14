@@ -64,7 +64,6 @@ df.drop( columns=["time"], inplace=True)
 
 -- summary kolonu incelendiğinde sayısal değer içermediği görüldü ve label encoding yapıldı.(label encoding pivot tablosu gösteriminden sonra yapıldı böylece pivot tablosunda hava durumu yerine sayısal bir değer yazmadı, inceleme kolaylaştırıldı)
 ```python
-df.summary.unique()
 df.summary.unique #label encoding yapılacak
 le=LabelEncoder()
 df["summary"]=le.fit_transform(df["summary"])
@@ -84,7 +83,7 @@ df=df.dropna()
 ```
 
 
-pivot tablolama - zaman ve hava durumu verilerini doğrudan kullanmak yerine use[kW] üzerindeki ağırlığını yanıtan pivot tabloları oluşturuldu, dataframe eklendi
+pivot tablolama - zaman ve hava durumu verilerini doğrudan kullanmak yerine use[kW] üzerindeki ağırlığını yansıtan pivot tabloları oluşturuldu ( bu saatte bu kadar enerji harcanır, bu havada bu kadar enerji harcanır bilgisini veren saatlik_tuketim ve hava_tuketim kolonlari oluşturuldu) dataframe'e eklendi
 ```python
 pivot=df.pivot_table(index="hour", values="use [kW]", aggfunc="mean").reset_index() # saat bazlı ortalaa tüketim pivot tablosu
 
