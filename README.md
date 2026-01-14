@@ -28,6 +28,7 @@ from sklearn.metrics import accuracy_score, classification_report
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
 ```
+
 dataset alındı ve incelendi
 ```python
 df=pd.read_csv("Smart_Home_dataset.csv")
@@ -35,6 +36,7 @@ df.head()
 df.describe()
 df.info()
 ```
+
 dataset içerisindeki kategorik kolonlar incelendi ve numerik hale getirildi
 
 -- coloudcover kolonu incelendiğinde sayısal olduğu ancak bir adet "cloudCover" değişkeninin bulunduğu görüldü ve Nan olarak değiştirildi.
@@ -65,22 +67,18 @@ df.summary.unique()
 ```
 
 --icon kolonu incelendiğinde gereksiz görüldü ve dataframeden çıkarıldı.(summary ile aynı değerleri içeren, uygulamalardaki hava durumu ikonunu gösteren kolon)
-
 ```python
 df.icon.unique() # ikon atılabilir gereksiz
 df.drop(columns=['icon'], inplace=True)
 ```
 
 bu işlemlerden sonra Nan değer kontrolü yapıldı, nan değerlerin az olması sebebiyle dataframeden çıkarıldı.
-
 ```python
 df.isnull().sum()
 df=df.dropna()
 ```
 
 pivot tablolama- zaman ve hava durumu verilerini doğrudan kullanmak yerine use[kW] üzerindeki ağırlığını yanıtan pivot tabloları oluşturuldu, dataframe eklendi
-
-
 ```python
 pivot=df.pivot_table(index="hour", values="use [kW]", aggfunc="mean").reset_index() # saat bazlı ortalaa tüketim pivot tablosu
 
@@ -111,13 +109,12 @@ df.info()
 ```
 
 target, use[kW] feature'ı üzerinden ortalama alınarak ortalama uzerinde kalanlara yüksek(1), altında kalanlara ise normal(0) değerini alan feature oluşturuldu
-
 ```python
 ortalama=df['use [kW]'].median()
 df["enerji_sev"]=(df["use [kW]"]> ortalama).astype(int) # ortalamadan az ise 0 cok ise 1
 ```
-modele verilecek girdiler ve target seçildi, train ve test olarak ayrıldı.
 
+modele verilecek girdiler ve target seçildi, train ve test olarak ayrıldı.
 ```python
 alma = ['use [kW]', 'gen [kW]', 'House overall [kW]', 
         'Dishwasher [kW]', 'Furnace 1 [kW]', 'Furnace 2 [kW]', 
@@ -138,8 +135,8 @@ y=df["enerji_sev"]
 
 X_train, X_test, y_train, y_test= train_test_split(X,y,test_size=0.2, random_state=42)
 ```
-RandomForest modeli kullanıldı, modelin hangi özelliklere daha çok dikkat ettiği grafikleştirildi.
 
+RandomForest modeli kullanıldı, modelin hangi özelliklere daha çok dikkat ettiği grafikleştirildi.
 ```python
 model=RandomForestClassifier()
 model.fit(X_train,y_train)
@@ -163,7 +160,6 @@ plt.show()
 ```
 
 KNN modeli çağrıldı, öncesinde daha iyi bir sonuç için StandardScaler ile X_train ve X_test ölçeklendirildi
-
 ```python
 scaler=StandardScaler()
 X_train=scaler.fit_transform(X_train)
@@ -179,8 +175,7 @@ print("sonuc:",classificationtable2)
 
 ```
 
-
-model çıktıları:
+#model çıktıları
 
 1- randomforest
 ```python
@@ -209,7 +204,7 @@ weighted avg       0.81      0.81      0.81    100771
 ```
 
 
-grafikler:
+#grafikler
 
 
 
