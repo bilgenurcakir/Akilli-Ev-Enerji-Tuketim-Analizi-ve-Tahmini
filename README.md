@@ -183,6 +183,7 @@ print("sonuc:",classificationtable2)
 model çıktıları:
 
 1- randomforest
+```python
 acc degeri: 0.8342380248285717
 sonuc:               precision    recall  f1-score   support
 
@@ -192,8 +193,10 @@ sonuc:               precision    recall  f1-score   support
     accuracy                           0.83    100771
    macro avg       0.83      0.83      0.83    100771
 weighted avg       0.83      0.83      0.83    100771
+```
 
 2- KNN
+```python
 acc degeri: 0.814341427593256
 sonuc:               precision    recall  f1-score   support
 
@@ -203,7 +206,7 @@ sonuc:               precision    recall  f1-score   support
     accuracy                           0.81    100771
    macro avg       0.81      0.81      0.81    100771
 weighted avg       0.81      0.81      0.81    100771
-
+```
 
 
 grafikler:
