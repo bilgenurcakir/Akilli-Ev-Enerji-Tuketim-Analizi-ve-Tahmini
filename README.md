@@ -219,5 +219,6 @@ karşılaştırma: Random Forest, karar ağaçlarıyla verideki karmaşıklığ�
 # grafikler
 
 
+![Resim Açıklaması](1)
+![Resim Açıklaması](2)
 ![Resim Açıklaması](3)
-![Resim Açıklaması](Grafikler_ve_sertifika/Ekran_Resmi_2026-01-14_23.52.22.png)
