@@ -1,9 +1,9 @@
 # Akilli Ev Enerji Tuketim Analizi ve Tahmini
 
 
-# alınan BTK akademi Makine öğrenmesi sertifikası
+# alınan BTK akademi sertifikaları
 
-![Resim Açıklaması](Python_ile_Makine_Öğrenmesi_sertifikası)
+![Resim Açıklaması](Python_ile_Makine_Öğrenmesi_sertifikası) ![Resim Açıklaması](Python_ile_Makine_Öğrenmesi_sertifikası)
 
 
 # projenin amacı
