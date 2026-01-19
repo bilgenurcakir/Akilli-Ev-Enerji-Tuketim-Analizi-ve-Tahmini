@@ -3,7 +3,7 @@
 
 # alınan BTK akademi sertifikaları
 
-![Resim Açıklaması](Python_ile_Makine_Öğrenmesi_sertifikası) ![Resim Açıklaması](Python_ile_Makine_Öğrenmesi_sertifikası)
+![Resim Açıklaması](Python_ile_Makine_Öğrenmesi_sertifikası) ![Resim Açıklaması](Veri_Bilimi_Python_ve_Tensorflow_Sertifika.pdf)
 
 
 # projenin amacı
