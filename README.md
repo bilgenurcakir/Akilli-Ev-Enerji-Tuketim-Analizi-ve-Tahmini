@@ -1,12 +1,6 @@
 # Akilli Ev Enerji Tuketim Analizi ve Tahmini
 
 
-# alınan BTK akademi sertifikaları
-
-![Resim Açıklaması](Python_ile_Makine_Öğrenmesi_sertifikası) 
-![Resim Açıklaması](Veri_Bilimi_Python_ve_Tensorflow_Sertifika.png)
-
-
 # projenin amacı
 Bir akıllı evin enerji tüketim verilerini, hava durumu ve zaman faktörleriyle anlık enerji kullanımının normal mi yoksa yüksek mi olduğunu tahmin eden bir model geliştirmektir.
 
